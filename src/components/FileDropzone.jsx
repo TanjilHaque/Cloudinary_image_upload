@@ -1,4 +1,3 @@
-// components/FileDropzone.jsx
 import React from "react";
 import { useDropzone } from "react-dropzone";
 
@@ -25,29 +24,16 @@ const FileDropzone = ({
   return (
     <div
       {...getRootProps()}
-      className={`border-2 border-dashed p-4 rounded text-center ${className}`}
+      className={`border-2 border-dashed rounded p-4 text-center cursor-pointer bg-white ${className}`}
     >
       <input {...getInputProps()} />
       {isDragActive ? (
-        <p>Drop the files here...</p>
+        <p className="text-blue-500">Drop the files here...</p>
       ) : (
-        <p>Drag 'n' drop files here, or click to select</p>
+        <p className="text-gray-500">Drag & drop or click to select an image</p>
       )}
     </div>
   );
 };
 
 export default FileDropzone;
-
-
-//example usage
-
-/**
- * 
- * <FileDropzone
-      onDrop={handleDrop}
-      accept={{ "image/*": [] }}
-      maxFiles={1}
-    />
- * 
- */
